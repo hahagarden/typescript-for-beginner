@@ -1,16 +1,18 @@
-//type Alias
 type Player = {
-  name: string;
+  readonly name: string; //readonly
   age?: number;
 };
 
-//optional type, object type
 const player: { name: string; age?: number } = { name: "garden" };
+const playerTuple: [string, number, boolean] = ["Nico", 12, true];
+const numbers: any[] = [1, 2, 3];
+const booleans: any = true;
+console.log(numbers + booleans); //any, occur no error
 
-//argument type, function return type
 function playerMaker(name: string): Player {
   return { name };
 }
 
 const nico = playerMaker("Nico");
 nico.age = 12;
+nico.name = "Nicolas"; //readonly error
