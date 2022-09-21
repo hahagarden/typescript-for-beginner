@@ -1,11 +1,6 @@
 type Print = {
-  (arr: number[]): void;
-  (arr: string[]): void;
-  (arr: boolean[]): void;
-  (arr: (number | boolean)[]): void;
-  (arr: (string | boolean)[]): void;
-  (arr: (number | string)[]): void;
-}; //polymorphism(diverse structure)
+  <T>(arr: T[]): void;
+}; //generics
 
 const printArr: Print = (arr) => {
   arr.forEach((i) => console.log(i));
