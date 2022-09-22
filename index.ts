@@ -1,11 +1,11 @@
 abstract class User {
   constructor(
     private firstName: string,
-    private lastName: string,
-    private nickName: string
+    private lastName: string, //private can only be used in User class
+    protected nickName: string // protected can only be used in User class and subclasses
   ) {}
 
-  abstract getNickName(arg: string): void; //abtract method should have call-signature and no implementation
+  abstract getNickName(arg: string): void;
 
   getFullName() {
     return `${this.firstName} ${this.lastName}`;
@@ -14,12 +14,9 @@ abstract class User {
 
 class Player extends User {
   getNickName(arg: string): void {
-    console.log(this.nickName); //cannot access private nickName
+    console.log(this.nickName);
   }
-} //should implement abstract method getNickName()
+}
 
 const nico = new Player("Nico", "las", "니꼬");
 nico.getFullName();
-
-nico.nickName = "라스"; //cannot access private nickName
-console.log(nico);
