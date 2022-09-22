@@ -1,10 +1,18 @@
-type Print = {
-  <T, M>(arr: T[], b: M): void;
-}; //generics
-
-const printArr: Print = (arr) => {
-  arr.forEach((i) => console.log(i));
+type Last = {
+  (arr: number[]): number;
+};
+type Prepend = {
+  (arr: number[], item: number): number[];
 };
 
-printArr([1, 2, 3, 4], "hello");
-printArr([1, 2, true, false], [1, 2]);
+const list: Last = (arr) => {
+  return arr[arr.length - 1];
+};
+const prepend: Prepend = (arr, item) => {
+  arr.unshift(item);
+  return arr;
+};
+
+let myArr = [1, 2, 3, 4];
+console.log(list(myArr));
+console.log(prepend(myArr, 0));
