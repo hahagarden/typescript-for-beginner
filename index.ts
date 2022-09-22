@@ -1,18 +1,12 @@
-type Last = {
-  (arr: number[]): number;
-};
-type Prepend = {
-  (arr: number[], item: number): number[];
-};
+class Player {
+  constructor(
+    private firstName: string,
+    private lastName: string,
+    public nickName: string
+  ) {}
+}
 
-const list: Last = (arr) => {
-  return arr[arr.length - 1];
-};
-const prepend: Prepend = (arr, item) => {
-  arr.unshift(item);
-  return arr;
-};
+const nico = new Player("Nico", "las", "니꼬");
 
-let myArr = [1, 2, 3, 4];
-console.log(list(myArr));
-console.log(prepend(myArr, 0));
+nico.nickName = "라스";
+console.log(nico);
