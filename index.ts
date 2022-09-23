@@ -9,7 +9,18 @@ const nico: Player = {
 interface Pet {
   name: string;
 }
-interface PlayerPet extends Pet {} //interface inheritance
+interface Pet {
+  //same interface Pet
+  animal: string;
+}
+interface PlayerPet extends Pet {}
+interface PlayerPet {
+  //same interface PlayerPet
+  age: number;
+}
 const bubu: PlayerPet = {
+  //interfaces merged
   name: "bubu",
+  animal: "dog",
+  age: 2,
 };
