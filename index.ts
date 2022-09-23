@@ -2,14 +2,14 @@ type Health = number;
 type Nickname = string;
 type Team = "red" | "blue" | "green";
 type Friends = Array<string>;
-type Player = {
+interface Player {
   name: string;
   age: number;
   health: Health;
   nickname: Nickname;
   team: Team;
   friends: Friends;
-}; //type Alias
+} //interface. almost same as type, but it is only for shaping 'object'
 
 const nico: Player = {
   name: "Nico",
